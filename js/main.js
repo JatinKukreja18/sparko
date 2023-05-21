@@ -12,6 +12,27 @@ window.addEventListener('scroll', function () {
     handleWelcomeKitTransition()
 })
 
+function handleApplySubmit(e, el) {
+    e.preventDefault()
+    const validity = document.querySelector('#apply-form').checkValidity();
+    el.style.opacity = 0;
+    let messageClass = '.apply-form-done';
+    if (validity) {
+        messageClass = '.apply-form-done';
+    } else {
+        messageClass = '.apply-form-error';
+    }
+    document.querySelector(messageClass).classList.add('showing');
+    setTimeout(function () {
+        document.querySelector(messageClass).classList.add('shown');
+    }, 100)
+    setTimeout(function () {
+        document.querySelector(messageClass).classList.remove('shown');
+        document.querySelector(messageClass).classList.remove('showing');
+        el.style.opacity = 1;
+        el.reset();
+    }, 5000)
+}
 
 function registerAccordion() {
     let accHeading = null;

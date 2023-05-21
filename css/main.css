@@ -1557,6 +1557,7 @@ figcaption {
 }
 
 .sp-apply-form-wrapper {
+  position: relative;
   margin-top: 20px;
 }
 
@@ -2527,6 +2528,40 @@ figcaption {
   bottom: 0%;
   left: 0%;
   right: 0%;
+}
+
+#sp-welcome-kit {
+  height: 150vh;
+}
+
+.apply-form-done,
+.apply-form-fail {
+  display: none;
+  opacity: 0;
+  transition: 1s;
+  font-size: 16px;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.apply-form-done p,
+.apply-form-fail p {
+  margin-bottom: 0;
+}
+
+.apply-form-done.showing,
+.apply-form-fail.showing {
+  display: flex;
+}
+
+.apply-form-done.shown,
+.apply-form-fail.shown {
+  display: flex;
+  opacity: 1;
 }
 
 @media screen and (min-width: 1280px) {
