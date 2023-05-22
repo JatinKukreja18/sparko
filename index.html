@@ -1,5 +1,5 @@
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
-<!--  Last Published: Sun May 21 2023 06:29:57 GMT+0000 (Coordinated Universal Time)  -->
+<!--  Last Published: Mon May 22 2023 18:08:42 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="645e2938c3daa18922e53b6d" data-wf-site="645e2938c3daa18922e53aca">
 
 <head>
@@ -9,7 +9,7 @@
   <meta content="Webflow" name="generator">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/main.css" rel="stylesheet" type="text/css">
+  <link href="css/sparko-f1a7fb.webflow.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -87,22 +87,34 @@
       transform: rotateX(-11deg) rotateY(27deg) rotateZ(-5deg) translateX(50px);
     }
 
-    .sp-apply-form-header-wrapper .sp-header-form-elements.sp-form-number {
-      transition: 1s;
-      opacity: 1;
+    @media only screen and (max-width:767px) {
+      .sp-dual-image-bottom {
+        transform: translateX(-15px);
+      }
+
+      .sp-dual-image-top {
+        transform: translateX(50px);
+      }
     }
 
-    .sp-apply-form-header-wrapper.input-hidden .sp-header-form-elements.sp-form-number {
-      width: 0;
-      padding: 0;
-      opacity: 0;
-      transition: .2s;
-      min-width: 0;
-      border: none;
-    }
+    @media only screen and (min-width:768px) {
+      .sp-apply-form-header-wrapper .sp-header-form-elements.sp-form-number {
+        transition: 1s;
+        opacity: 1;
+      }
 
-    .sp-apply-form-header-wrapper.input-hidden .sp-header-form-elements.sp-button-primary {
-      border-radius: 6px;
+      .sp-apply-form-header-wrapper.input-hidden .sp-header-form-elements.sp-form-number {
+        width: 0;
+        padding: 0;
+        opacity: 0;
+        transition: .2s;
+        min-width: 0;
+        border: none;
+      }
+
+      .sp-apply-form-header-wrapper.input-hidden .sp-header-form-elements.sp-button-primary {
+        border-radius: 6px;
+      }
     }
 
     /*.sp-accordion-title-wrapper ~ .sp-accordion-content-image-outside{
@@ -132,6 +144,28 @@
         background-position: 0px;
       }
     }
+
+    @media only screen and (max-width:767px) {
+      .footer-divider {
+        background-image: linear-gradient(to right, #9F73FD, #65ffff 30%, #f69 60%, #fdfb71, #9f73fd);
+        transition: 20s;
+        animation: bgmove 30s infinite;
+      }
+
+      @keyframes bgmove {
+        0% {
+          background-position: 0px;
+        }
+
+        50% {
+          background-position: 200vw;
+        }
+
+        100% {
+          background-position: 0px;
+        }
+      }
+    }
   </style>
   <style>
     .sparko-gradient-section {
@@ -145,6 +179,48 @@
       transition: 1s;
       transform: translate(0, 0px);
     }
+
+    #welcome-kit .sparko-hero-image,
+    #welcome-kit .sparko-hero-content {
+      opacity: 0;
+      transition: opacity .5s;
+    }
+
+    #welcome-kit .sp-hand-mockup-middle {
+      transform: translateY(-50px);
+      transition: .8s;
+    }
+
+    #welcome-kit.animate-move .sp-hand-mockup-middle {
+      transform: translateY(0px);
+    }
+
+    #welcome-kit.fadein .sparko-hero-image,
+    #welcome-kit.fadein .sparko-hero-content {
+      opacity: 1;
+    }
+
+    @media only screen and (max-width:767px) {
+      #welcome-kit .sp-hand-mockup-middle {
+        transform: translateY(-5vw);
+      }
+
+      .sp-hero-wrapper {
+        height: calc(100vh - 80px);
+      }
+
+      .sparko-gradient-section {
+        opacity: 0;
+        transform: translate(0, 0px);
+        transition: 0.2s;
+      }
+
+      .sparko-gradient-section.active {
+        opacity: 1;
+        transition: 1s;
+        transform: translate(0, 0px);
+      }
+    }
   </style>
 </head>
 
@@ -153,24 +229,26 @@
     data-doc-height="1" role="banner" class="sparko-header sp-mobile-padding w-nav">
     <div class="sp-container">
       <div class="sparko-navbar-wrapper">
-        <a href="#" class="navbar-brand w-nav-brand"><img src="images/Sparko_Logo.svg" loading="lazy" alt=""></a>
+        <a href="#" class="sp-navbar-brand w-nav-brand"><img src="images/Splito_Logo.svg" loading="lazy" alt=""
+            class="sp-logo-header"></a>
+        <div class="sp-header-seperator"></div>
         <div class="sparko-header-section-scrollable">
           <div class="sparko-nav-menu-wrapper">
             <ul role="list" class="nav-menu w-list-unstyled">
               <li class="sparko-menu-item">
-                <a href="#sparko-features" class="nav-link">Features</a>
+                <a href="#sparko-features" data-target="sparko-features" class="sp-nav-link">Features</a>
               </li>
               <li class="sparko-menu-item">
-                <a href="#how-to-apply" class="nav-link">How to Apply</a>
+                <a href="#how-to-apply" data-target="how-to-apply" class="sp-nav-link">How to Apply</a>
               </li>
               <li class="sparko-menu-item">
-                <a href="#" class="nav-link">Welcome Kit</a>
+                <a href="#welcome-kit" data-target="welcome-kit" class="sp-nav-link">Welcome Kit</a>
               </li>
               <li class="sparko-menu-item">
-                <a href="#" class="nav-link">Download</a>
+                <a href="#download-banner" data-target="download-banner" class="sp-nav-link">Download</a>
               </li>
               <li class="sparko-menu-item">
-                <a href="#" class="nav-link">FAQs &amp; Support</a>
+                <a href="#faq-support" data-target="faq-support" class="sp-nav-link">FAQs &amp; Support</a>
               </li>
             </ul>
             <div class="sp-apply-form-header-wrapper input-hidden w-form">
@@ -179,9 +257,12 @@
                   name="Phone-Number-2" data-name="Phone Number 2" placeholder="Enter Phone Number" id="Phone-Number-2"
                   required=""><input type="submit" value="Apply Now" data-wait="Please wait..."
                   class="sp-button-primary with-input sp-header-form-elements w-button">
+                <a href="#" class="sp-button-primary with-input sp-header-form-elements overlay-type w-button">Button
+                  Text</a>
               </form>
-              <div class="w-form-done">
-                <div>Thank you! Your submission has been received!</div>
+              <div class="success-message w-form-done"><img src="images/done.svg" loading="lazy" alt=""
+                  class="success-check">
+                <div class="success-text white"> Your submission has been received!</div>
               </div>
               <div class="w-form-fail">
                 <div>Oops! Something went wrong while submitting the form.</div>
@@ -212,19 +293,17 @@
         <div data-w-id="86e64837-0616-515b-4568-76c147234d1f" style="opacity:0" class="sparko-intro-content">
           <div class="sp-h1 white">Introducing <br>SPLITO by SBI Card</div>
           <div class="sparko-paragraph-bigger white">Live now Pay Later.<br></div>
-          <div class="sp-apply-form-wrapper">
-            <form id="apply-form" name="apply-form" data-name="Apply Form" method="get" class="sp-apply-now-form"
-              onsubmit="handleApplySubmit(event,this)">
-              <input type="tel" class="sp-form-number with-button w-input" maxlength="256" name="Phone-Number"
-                data-name="Phone Number" placeholder="Enter Phone Number" id="Phone-Number" required="">
-              <input type="submit" value="Apply Now" data-wait="Please wait..."
-                class="sp-button-primary with-input w-button">
-            </form>
-            <div class="apply-form-done">
-              <img src="./images/check.svg" />
-              <p>Thank you! Your submission has been received!</p>
+          <div class="sp-apply-form-wrapper w-form">
+            <form id="email-form" name="email-form" data-name="Email Form" method="get" class="sp-apply-now-form"><input
+                type="tel" class="sp-form-number with-button w-input" maxlength="256" name="Phone-Number"
+                data-name="Phone Number" placeholder="Enter Phone Number" id="Phone-Number" required=""><input
+                type="submit" value="Apply Now" data-wait="Please wait..."
+                class="sp-button-primary with-input-big w-button"></form>
+            <div class="success-message w-form-done"><img src="images/done.svg" loading="lazy" alt=""
+                class="success-check">
+              <div class="success-text">Thank you! Your submission has been received!</div>
             </div>
-            <div class="apply-form-fail">
+            <div class="w-form-fail">
               <div>Oops! Something went wrong while submitting the form.</div>
             </div>
           </div>
@@ -233,27 +312,30 @@
         </div>
         <div data-w-id="b2f01bf2-a3cf-a787-3e87-3c3081c03bac"
           style="-webkit-transform:translate3d(0, 80px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 80px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 80px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 80px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
-          class="sparko-into-image"><img src="images/Mockup.png" loading="eager" alt="" class="sparko-mobile-mockup">
-        </div>
+          class="sparko-into-image"><img src="images/main_mockup.png" loading="eager"
+            srcset="images/main_mockup-p-500.png 500w, images/main_mockup-p-800.png 800w, images/main_mockup-p-1080.png 1080w, images/main_mockup-p-1600.png 1600w, images/main_mockup.png 1976w"
+            sizes="(max-width: 479px) 90vw, (max-width: 767px) 83vw, (max-width: 991px) 39vw, (max-width: 1279px) 34vw, 37vw"
+            alt="" class="sparko-mobile-mockup"></div>
       </div>
     </div>
     <div class="sparko-banner-bottom-gradient"></div>
+    <div class="sp-banner-gradient"></div>
   </div>
-  <div class="sparko-features-section">
-    <section id="sparko-features" class="sparko-gradient-section active">
+  <div id="sparko-features" class="sparko-features-section">
+    <section class="sparko-gradient-section active">
       <div class="sp-container">
         <div class="w-layout-grid feature-grid about-1">
-          <div class="features-section-content">
+          <div class="features-section-content calculated-padding">
             <h2 class="sp-h2 pink mb0">Features</h2>
-            <h2 class="sp-h2">Pay in 3, Go Interest Free</h2>
+            <h2 class="sp-h2 feature-section-heading">Pay in 3, Go Interest Free</h2>
             <p class="sparko-paragraph-bigger">No joining fee, annual fee, and hidden charges that you need to worry
               about. All service charges are shown upfront.</p>
           </div>
           <div class="sparko-features-section-image">
-            <div class="sp-lottie hidden" data-w-id="f0739019-f2e4-0f19-13c1-36b3abf01959" data-animation-type="lottie"
+            <div class="sp-lottie" data-w-id="f0739019-f2e4-0f19-13c1-36b3abf01959" data-animation-type="lottie"
               data-src="documents/SBIC_Hero-2_3-is-interest-free.json" data-loop="1" data-direction="1"
               data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="2" data-duration="0">
-            </div><img src="images/3.png" loading="lazy" alt="" class="sp-feature-image">
+            </div><img src="images/3.png" loading="lazy" alt="" class="sp-feature-image hidden">
           </div>
         </div>
       </div>
@@ -261,17 +343,17 @@
     <div class="sparko-gradient-section">
       <div class="sp-container">
         <div class="w-layout-grid feature-grid about-2">
-          <div class="features-section-content">
+          <div class="features-section-content calculated-padding">
             <h2 class="sp-h2 pink mb0">Features</h2>
-            <h2 class="sp-h2">What Joining Fee?</h2>
+            <h2 class="sp-h2 feature-section-heading">What Joining Fee?</h2>
             <p class="sparko-paragraph-bigger">No joining fee, annual fee, and hidden charges that you need to worry
               about. All service charges are shown upfront.</p>
           </div>
           <div class="sparko-features-section-image">
-            <div class="sp-lottie hidden" data-w-id="9dd408cf-a4df-4428-a5da-681e9e201c65" data-animation-type="lottie"
-              data-src="documents/SBIC_Hero-2_Pay-and-play.lottie" data-loop="1" data-direction="1" data-autoplay="1"
+            <div class="sp-lottie" data-w-id="9dd408cf-a4df-4428-a5da-681e9e201c65" data-animation-type="lottie"
+              data-src="documents/SBIC_Hero-2_Pay-and-play.json" data-loop="1" data-direction="1" data-autoplay="1"
               data-is-ix2-target="0" data-renderer="svg" data-default-duration="2" data-duration="0"></div><img
-              src="images/place.png" loading="lazy" alt="" class="sp-feature-image">
+              src="images/place.png" loading="lazy" alt="" class="sp-feature-image hidden">
           </div>
         </div>
       </div>
@@ -279,18 +361,18 @@
     <div class="sparko-gradient-section">
       <div class="sp-container">
         <div class="w-layout-grid feature-grid about-3">
-          <div class="features-section-content">
+          <div class="features-section-content calculated-padding">
             <h2 class="sp-h2 pink mb0">Features</h2>
-            <h2 class="sp-h2">Everything on the App</h2>
+            <h2 class="sp-h2 feature-section-heading">Everything on the App</h2>
             <p class="sparko-paragraph-bigger">SPLITO Smart App brings you a seamless and personalised experience.
               Change PIN, set transaction limits, view spends summary, redeem your Rewards and SplitPay your card bill,
               all on the app.</p>
           </div>
           <div id="w-node-d69d427f-39c4-1f63-fa6f-dc1788a64b69-22e53b6d" class="sparko-features-section-image">
-            <div class="sp-lottie hidden" data-w-id="fd46c95c-e6cd-4bb2-dfd5-967940259d6b" data-animation-type="lottie"
-              data-src="documents/SBIC_Hero-1_Just-Splito.lottie" data-loop="1" data-direction="1" data-autoplay="1"
+            <div class="sp-lottie" data-w-id="fd46c95c-e6cd-4bb2-dfd5-967940259d6b" data-animation-type="lottie"
+              data-src="documents/SBIC_Hero-1_Just-Splito.json" data-loop="1" data-direction="1" data-autoplay="1"
               data-is-ix2-target="0" data-renderer="svg" data-default-duration="2" data-duration="0"></div><img
-              src="images/man.png" loading="lazy" alt="" class="sp-feature-image">
+              src="images/man.png" loading="lazy" alt="" class="sp-feature-image hidden">
           </div>
         </div>
       </div>
@@ -298,17 +380,17 @@
     <div class="sparko-gradient-section">
       <div class="sp-container">
         <div class="w-layout-grid feature-grid about-4">
-          <div class="features-section-content">
+          <div class="features-section-content calculated-padding">
             <h2 class="sp-h2 pink mb0">Features</h2>
-            <h2 class="sp-h2">And the Credits Go to you</h2>
+            <h2 class="sp-h2 feature-section-heading">And the Credits Go to you</h2>
             <p class="sparko-paragraph-bigger">Every time you pay your credit card bill in full on or before the due
               date, you earn SPLITO Credits. Use these Credits to pay your card bill.</p>
           </div>
           <div id="w-node-_3fff2814-7a5b-2fb4-8224-09752f7e96e2-22e53b6d" class="sparko-features-section-image">
-            <div class="sp-lottie hidden" data-w-id="3fff2814-7a5b-2fb4-8224-09752f7e96e3" data-animation-type="lottie"
-              data-src="documents/SBIC_Hero-1_Just-Splito.lottie" data-loop="1" data-direction="1" data-autoplay="1"
-              data-is-ix2-target="0" data-renderer="svg" data-default-duration="2" data-duration="0"></div><img
-              src="images/man.png" loading="lazy" alt="" class="sp-feature-image">
+            <div class="sp-lottie" data-w-id="3fff2814-7a5b-2fb4-8224-09752f7e96e3" data-animation-type="lottie"
+              data-src="documents/SBIC_Cashback_Compressed.json" data-loop="0" data-direction="1" data-autoplay="1"
+              data-is-ix2-target="0" data-renderer="svg" data-duration="0"></div><img src="images/man.png"
+              loading="lazy" alt="" class="sp-feature-image hidden">
           </div>
         </div>
       </div>
@@ -316,7 +398,7 @@
     <div id="how-to-apply" class="sparko-gradient-section">
       <div class="sp-container">
         <div class="w-layout-grid feature-grid about-4">
-          <div class="features-section-content">
+          <div class="features-section-content how-to-apply">
             <h2 class="sp-h2 pink mb0">How to apply</h2>
             <h2 class="sp-h2 white">Quick and Easy</h2>
             <p class="sparko-paragraph-bigger white">Download our SPARKO app to apply for your card instantly through
@@ -326,10 +408,10 @@
           <div id="w-node-_2d1940b1-0c92-d82f-e62c-220a33003b9f-22e53b6d" class="sparko-features-section-image">
             <div class="sp-dual-card-wrapper"><img src="images/Dual-Card-Placeholder.png" loading="lazy" alt=""
                 class="sp-dual-image-placeholder"><img src="images/Splito_Dual_Bottom.png" loading="lazy"
-                sizes="(max-width: 479px) 54vw, (max-width: 767px) 56vw, (max-width: 991px) 38vw, (max-width: 1279px) 36vw, (max-width: 1919px) 38vw, 41vw"
+                sizes="(max-width: 479px) 72vw, (max-width: 767px) 60vw, (max-width: 991px) 38vw, (max-width: 1279px) 36vw, (max-width: 1919px) 38vw, 41vw"
                 srcset="images/Splito_Dual_Bottom-p-500.png 500w, images/Splito_Dual_Bottom-p-800.png 800w, images/Splito_Dual_Bottom.png 1024w"
                 alt="" class="sp-dual-image-bottom"><img src="images/Splito_Dual_Top.png" loading="lazy"
-                sizes="(max-width: 479px) 54vw, (max-width: 767px) 56vw, (max-width: 991px) 38vw, (max-width: 1279px) 36vw, (max-width: 1919px) 38vw, 41vw"
+                sizes="(max-width: 479px) 72vw, (max-width: 767px) 60vw, (max-width: 991px) 38vw, (max-width: 1279px) 36vw, (max-width: 1919px) 38vw, 41vw"
                 srcset="images/Splito_Dual_Top-p-500.png 500w, images/Splito_Dual_Top-p-800.png 800w, images/Splito_Dual_Top.png 1024w"
                 alt="" class="sp-dual-image-top"></div>
           </div>
@@ -346,54 +428,48 @@
       </div>
     </div>
   </div>
-  <div class="sparko-section full-vh-min sticky" id="sp-welcome-kit">
-    <section class="sparko-hero-banner white bottom-unpadded wf-section">
-      <div class="sp-container">
-        <div data-w-id="6896ce2a-87fa-b704-1890-f2fdc29f14d2" class="hero-wrapper">
-          <div id="w-node-_6896ce2a-87fa-b704-1890-f2fdc29f14d3-22e53b6d" class="sparko-hero-content">
-            <h1 class="sp-h2 pink mb0">Welcome kit</h1>
-            <h1 class="sp-h2">Know your benefits</h1>
-            <p class="sparko-paragraph-bigger">Download our E-Kit to know more about the product and other details.</p>
-            <a href="#" class="sp-button-primary hero-apply-now w-button">View Brochure</a>
-          </div>
-          <div id="w-node-_6896ce2a-87fa-b704-1890-f2fdc29f14da-22e53b6d" class="sparko-hero-image">
-            <div class="sp-hand-mockup"><img src="images/Hand_Mockup_Bottom.png" loading="lazy"
-                sizes="(max-width: 479px) 90vw, (max-width: 767px) 18vw, (max-width: 991px) 4vw, (max-width: 1279px) 5vw, (max-width: 1919px) 6vw, 8vw"
-                srcset="images/Hand_Mockup_Bottom.png 500w, images/Hand_Mockup_Bottom.png 800w, images/Hand_Mockup_Bottom.png 1080w, images/Hand_Mockup_Bottom.png 1600w, images/Hand_Mockup_Bottom.png 2000w, images/Hand_Mockup_Bottom.png 2265w"
-                alt="" class="sp-hand-mockup-bottom"><img src="images/Hand_Mockup_Middle.png" loading="lazy"
-                style="-webkit-transform:translate3d(0, -40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-                sizes="(max-width: 479px) 90vw, (max-width: 767px) 18vw, (max-width: 991px) 4vw, (max-width: 1279px) 5vw, (max-width: 1919px) 6vw, 8vw"
-                srcset="images/Hand_Mockup_Middle.png 500w, images/Hand_Mockup_Middle.png 800w, images/Hand_Mockup_Middle.png 1080w, images/Hand_Mockup_Middle.png 1600w, images/Hand_Mockup_Middle.png 2000w, images/Hand_Mockup_Middle.png 2265w"
-                alt="" class="sp-hand-mockup-middle"><img src="images/Hand_Mockup_Top.png" loading="lazy" alt=""
-                class="sp-hand-mockup-top"></div>
-          </div>
+  <section id="welcome-kit" class="sp-welcome-kit">
+    <div class="sp-container welcome-kit-container">
+      <div class="sp-hero-wrapper">
+        <div id="w-node-_6896ce2a-87fa-b704-1890-f2fdc29f14d3-22e53b6d" class="sparko-hero-content">
+          <h1 class="sp-h2 pink mb0">Welcome kit</h1>
+          <h1 class="sp-h2">Know your benefits</h1>
+          <p class="sparko-paragraph-bigger">Download our E-Kit to know more about the product and other details.</p>
+          <a href="#" class="sp-button-primary hero-apply-now w-button">View Brochure</a>
+        </div>
+        <div id="w-node-_6896ce2a-87fa-b704-1890-f2fdc29f14da-22e53b6d" class="sparko-hero-image">
+          <div class="sp-hand-mockup"><img src="images/Hand-Mockup_Bottom.png" loading="lazy" alt=""
+              class="sp-hand-mockup-bottom"><img src="images/HandMockup_Middle.png" loading="lazy" width="1132.5" alt=""
+              class="sp-hand-mockup-middle"><img src="images/Hand_Mockup_Top.png" loading="lazy" alt=""
+              class="sp-hand-mockup-top"></div>
         </div>
       </div>
-    </section>
-  </div>
-  <div class="sparko-section">
+    </div>
+  </section>
+  <div id="download-banner" class="sparko-section">
     <section class="sparko-download-banner wf-section">
       <div class="sp-container">
-        <div class="hero-wrapper">
+        <div class="sp-download-wrapper">
           <div id="w-node-b5189049-d6a0-1863-45be-7ed4c7192a48-22e53b6d" class="sparko-hero-content">
             <h1 class="sp-h2 white">Download now to get started</h1>
           </div>
           <div id="w-node-b5189049-d6a0-1863-45be-7ed4c7192a46-22e53b6d" class="sparko-hero-ctas">
-            <div class="app-store-link">
-              <a href="#" class="w-inline-block"><img src="images/apple.svg" loading="lazy" alt=""></a>
-            </div>
-            <div class="app-store-link">
-              <a href="#" class="w-inline-block"><img src="images/google.svg" loading="lazy" alt=""></a>
-            </div>
+            <a href="#" class="app-store-link w-inline-block"><img src="images/GPlay.svg" loading="lazy" alt=""
+                class="app-store-image"></a>
+            <a href="#" class="app-store-link w-inline-block"><img src="images/AppleStore.svg" loading="lazy" alt=""
+                class="app-store-image"></a>
           </div>
           <div id="w-node-b5189049-d6a0-1863-45be-7ed4c7192a4d-22e53b6d" class="hero-form w-form">
             <form id="wf-form-Hero-Form" name="wf-form-Hero-Form" data-name="Hero Form" method="get"
               class="hero-form-container"><input type="tel" class="hero-form-input w-input" maxlength="256"
                 name="Hero-Email-2" data-name="Hero Email 2" aria-label="Enter your email"
-                placeholder="Enter Phone Number" id="Hero-Email-2"><input type="submit" value="Get Link"
-                data-wait="Please wait..." class="sp-button-primary with-input w-button"></form>
-            <div class="w-form-done">
-              <div>Thank you! Your submission has been received!</div>
+                placeholder="Enter Phone Number" id="Hero-Email-2"><input type="submit" value="Get Download Link"
+                data-wait="Please wait..." class="sp-button-primary with-input-small hidden-mob w-button"><input
+                type="submit" value="Get Link" data-wait="Please wait..."
+                class="sp-button-primary with-input-small hidden-tab w-button"></form>
+            <div class="success-message w-form-done"><img src="images/done.svg" loading="lazy" alt=""
+                class="success-check">
+              <div class="success-text">Thank you! Your submission has been received!</div>
             </div>
             <div class="w-form-fail">
               <div>Oops! Something went wrong while submitting the form.</div>
@@ -403,7 +479,7 @@
       </div>
     </section>
   </div>
-  <section class="sparko-section sparko-faq-section">
+  <section id="faq-support" class="sparko-section sparko-faq-section">
     <div class="sp-container">
       <h1 class="sp-h2">FAQs &amp; support</h1>
       <div class="sp-accordion-with-image loaded">
@@ -694,11 +770,11 @@
         </div>
       </div>
       <a href="#" class="sp-faq-load-more w-inline-block">
-        <div>Load More</div>
+        <div>Load More</div><img src="images/down-chev.svg" loading="lazy" alt="" class="sp-load-more-chev">
       </a>
     </div>
   </section>
-  <section class="sparko-footer wf-section">
+  <footer class="sparko-footer wf-section">
     <div class="sp-container">
       <div class="footer-wrapper">
         <div class="sp-footer-company-info">
@@ -748,70 +824,181 @@
           <a href="#" class="footer-link">Tokenization</a>
         </div>
         <div id="w-node-a73bea3c-75c3-21f1-eac3-2dcb65bc72f3-22e53b6d" class="sparko-social-icons">
-          <a href="#" class="w-inline-block"><img src="images/fb.svg" loading="lazy" alt=""></a>
+          <a href="#" class="w-inline-block"><img src="images/facebook.svg" loading="lazy" alt=""></a>
           <a href="#" class="w-inline-block"><img src="images/LinkedIn.svg" loading="lazy" alt=""></a>
           <a href="#" class="w-inline-block"><img src="images/Instagram.svg" loading="lazy" alt=""></a>
           <a href="#" class="w-inline-block"><img src="images/Twitter.svg" loading="lazy" alt=""></a>
         </div>
       </div>
     </div>
-  </section>
-  <div>
-    <div class="spark-section hidden wf-section">
-      <div class="spark-container w-container">
-        <div data-hover="false" data-delay="250" class="spark-faq-expander w-dropdown">
-          <div class="spark-faq-button w-dropdown-toggle">
-            <div class="spark-faq-plus-to-x">
-              <div class="spark-horizontal-line"></div>
-              <div class="spark-vertical-line"></div>
-            </div>
-            <div class="spark-button-text">How do I sign up for a Sparko card?</div>
-          </div>
-          <nav class="spark-faq-dropdown w-dropdown-list">
-            <p class="spark-dropdown-text">You can apply for a credit card online, which is a very easy way of getting
-              in touch with a bank. One can go to the website of the bank from which you want to have a credit card and
-              find your pick from the website where you can find a separate section</p>
-          </nav>
-        </div>
-        <div data-hover="false" data-delay="250" class="spark-faq-expander w-dropdown">
-          <div class="spark-faq-button w-dropdown-toggle">
-            <div class="spark-faq-plus-to-x">
-              <div class="spark-horizontal-line"></div>
-              <div class="spark-vertical-line"></div>
-            </div>
-            <div class="spark-button-text">How long does it take for my card to arrive after I order it?</div>
-          </div>
-          <nav class="spark-faq-dropdown w-dropdown-list">
-            <p class="spark-dropdown-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius
-              enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut
-              commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut
-              sem vitae risus tristique posuere.</p>
-          </nav>
-        </div>
-        <div data-hover="false" data-delay="250" class="spark-faq-expander w-dropdown">
-          <div class="spark-faq-button w-dropdown-toggle">
-            <div class="spark-faq-plus-to-x">
-              <div class="spark-horizontal-line"></div>
-              <div class="spark-vertical-line"></div>
-            </div>
-            <div class="spark-button-text">How do I activate my physical card?</div>
-          </div>
-          <nav class="spark-faq-dropdown w-dropdown-list">
-            <p class="spark-dropdown-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius
-              enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut
-              commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut
-              sem vitae risus tristique posuere.</p>
-          </nav>
-        </div>
-      </div>
-      <a href="#" class="link">Load More </a>
-    </div>
-  </div>
+  </footer>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=645e2938c3daa18922e53aca"
     type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous">
   </script>
   <script src="js/webflow.js" type="text/javascript"></script>
-  <script src="js/main.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      // register accordion animation
+      registerAccordion()
+      document.querySelector('.sp-apply-form-header-wrapper .sp-button-primary.overlay-type').addEventListener(
+        'click',
+        function () {
+          document.querySelector('.sp-apply-form-header-wrapper .sp-button-primary.overlay-type').classList.add(
+            'hidden')
+          document.querySelector('.sp-apply-form-header-wrapper').classList.remove('input-hidden')
+        })
+    })
+    window.addEventListener('scroll', function () {
+      // Handle Feature Section Scroll Animation
+      handleFeaturesSection();
+      // Handle Header Input Scroll Animation
+      handleHeaderInputTransition()
+      // Handle Welcome Kit Section Scroll Animation
+      handleWelcomeKitTransition();
+      // Handle header Active Link
+      handleHeaderActiveLinks();
+    })
+
+    function registerAccordion() {
+      let accHeading = null;
+      let accPanel = null;
+      accHeading = document.querySelectorAll(".sp-accordion-title-wrapper:not(.ignore)");
+      accPanel = document.querySelectorAll(".sp-accordion-content-wrapper:not(.ignore)");
+      for (let i = 0; i < accHeading.length; i++) {
+        // Execute whenever an accordion is clicked 
+        accHeading[i].onclick = function () {
+          if (this.nextElementSibling.style.maxHeight) {
+            hidePanels(); // Hide All open Panels 
+          } else {
+            showPanel(this); // Show the panel
+          }
+        };
+      }
+      // Function to Show a Panel
+      function showPanel(elem) {
+        hidePanels();
+        elem.classList.add("active");
+        elem.nextElementSibling.style.overflow = 'visible';
+        elem.nextElementSibling.style.maxHeight = elem.nextElementSibling.scrollHeight + "px";
+        setTimeout(() => {
+          elem.nextElementSibling.style.opacity = '1';
+        }, 100)
+      }
+      // Function to Hide all shown Panels
+      function hidePanels() {
+        for (let i = 0; i < accPanel.length; i++) {
+          accPanel[i].style.maxHeight = null;
+          accPanel[i].style.opacity = '0';
+          accHeading[i].classList.remove("active");
+          accPanel[i].style.overflow = 'hidden';
+        }
+      }
+      document.querySelector('.sp-faq-load-more').addEventListener('click', handleFaqsSection)
+    }
+
+    function handleFaqsSection() {
+      const SHOW_PER_VIEW = 5;
+      const allHiddenFaqs = document.querySelectorAll('.sp-accordion-with-image:not(.loaded)')
+      for (let i = 0; i < allHiddenFaqs.length; i++) {
+        console.log(allHiddenFaqs[i]);
+        if (i === allHiddenFaqs.length - 1) {
+          document.querySelector('.sp-faq-load-more').style.display = 'none';
+        }
+        if (i > SHOW_PER_VIEW) {
+          return
+        }
+        allHiddenFaqs[i].classList.add('loaded')
+      }
+    }
+
+    function handleHeaderActiveLinks() {
+      const allHeaderLinks = document.querySelectorAll('.sp-nav-link[data-target]');
+      let activeIndex = -1;
+      for (let i = 0; i < allHeaderLinks.length; i++) {
+        let positionToMatch = document.querySelector("#" + allHeaderLinks[i].dataset.target).offsetTop;
+        if (i === 1) {
+          positionToMatch += document.querySelector('.sparko-banner-section').offsetHeight + (window.innerHeight / 2);
+        }
+        if (window.pageYOffset >= (positionToMatch - (window.innerHeight / 2))) {
+          activeIndex = i;
+        }
+      }
+      if (document.querySelector('.sp-nav-link.active')) {
+        document.querySelector('.sp-nav-link.active').classList.remove('active')
+      }
+      if (activeIndex >= 0 && !allHeaderLinks[activeIndex].classList.contains('active')) {
+        allHeaderLinks[activeIndex].classList.add('active');
+        document.querySelector('.sparko-navbar-wrapper').scrollLeft = allHeaderLinks[activeIndex].offsetLeft - 60;
+      }
+    }
+
+    function handleHeaderInputTransition() {
+      if (window.innerWidth < 768) {
+        if (window.pageYOffset > window.innerHeight) {
+          document.querySelector('.sp-navbar-brand').classList.add('shrink');
+        } else {
+          document.querySelector('.sp-navbar-brand').classList.remove('shrink');
+        }
+        return;
+      }
+      if (window.pageYOffset > window.innerHeight) {
+        document.querySelector('.sp-apply-form-header-wrapper').classList.remove('input-hidden')
+        document.querySelector('.sp-apply-form-header-wrapper .sp-button-primary.overlay-type').classList.add('hidden')
+      } else {
+        document.querySelector('.sp-apply-form-header-wrapper').classList.add('input-hidden')
+        document.querySelector('.sp-apply-form-header-wrapper .sp-button-primary.overlay-type').classList.remove(
+          'hidden')
+      }
+    }
+
+    function handleWelcomeKitTransition() {
+      const welcomeKitSection = document.querySelector('#welcome-kit');
+      const extraOffset = (window.innerHeight / 3);
+      if (window.pageYOffset >= (welcomeKitSection.offsetTop - extraOffset)) {
+        if (!welcomeKitSection.classList.contains('fadein')) {
+          welcomeKitSection.classList.add('fadein');
+        }
+        if (window.pageYOffset >= welcomeKitSection.offsetTop - 65) {
+          welcomeKitSection.classList.add('animate-move');
+        } else {
+          welcomeKitSection.classList.remove('animate-move');
+        }
+      } else {
+        welcomeKitSection.classList.remove('fadein');
+      }
+    }
+
+    function handleFeaturesSection() {
+      let rotateCards = false;
+      const featuresSectionTop = document.querySelector('.sparko-features-section').offsetTop;
+      const allFeatureSections = document.querySelectorAll('.sparko-features-section .sparko-gradient-section');
+      const currentScrollPosition = window.pageYOffset;
+      let activeIndex = 0;
+      if (window.pageYOffset > (featuresSectionTop + window.innerHeight)) {
+        activeIndex = 1;
+        if (window.pageYOffset > (featuresSectionTop + window.innerHeight + window.innerHeight)) {
+          activeIndex = 2;
+          if (window.pageYOffset > (featuresSectionTop + window.innerHeight + window.innerHeight + window
+              .innerHeight)) {
+            activeIndex = 3;
+          }
+          if (window.pageYOffset > (featuresSectionTop + (window.innerHeight * 4))) {
+            activeIndex = 4;
+            rotateCards = true;
+          }
+        }
+      }
+      document.querySelector('.sparko-gradient-section.active').classList.remove('active')
+      allFeatureSections[activeIndex].classList.add('active');
+      if (rotateCards) {
+        document.querySelector('.sp-dual-image-bottom').classList.add('transitioned');
+        document.querySelector('.sp-dual-image-top').classList.add('transitioned');
+      } else {
+        document.querySelector('.sp-dual-image-bottom').classList.remove('transitioned');
+        document.querySelector('.sp-dual-image-top').classList.remove('transitioned');
+      }
+    }
+  </script>
 </body>
 
 </html>
