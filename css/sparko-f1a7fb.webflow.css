@@ -275,27 +275,27 @@ figcaption {
   display: flex;
 }
 
-.sparko-section {
+.sp-section {
   margin-left: 0;
   margin-right: 0;
 }
 
-.sparko-section.cc-cta {
+.sp-section.cc-cta {
   background-color: #f4f4f4;
   padding-left: 80px;
   padding-right: 80px;
 }
 
-.sparko-section.cc-store-home-wrap {
+.sp-section.cc-store-home-wrap {
   margin-left: 0;
   margin-right: 0;
 }
 
-.sparko-section.full-vh {
+.sp-section.full-vh {
   height: 100vh;
 }
 
-.sparko-section.sparko-banner-section {
+.sp-section.sparko-banner-section {
   height: 100vh;
   min-height: 500px;
   background-image: url('../images/DesktopBG.png');
@@ -303,32 +303,41 @@ figcaption {
   background-size: cover;
   background-attachment: fixed;
   align-items: stretch;
-  padding-top: 60px;
   display: flex;
+  position: relative;
   overflow: hidden;
 }
 
-.sparko-section.full-vh-min {
+.sp-section.full-vh-min {
   height: 100vh;
 }
 
-.sparko-section.full-vh-min.sticky.special-scroll {
+.sp-section.full-vh-min.sticky.special-scroll {
   height: 150vh;
   align-items: flex-start;
   display: flex;
 }
 
-.sparko-section.sticky {
+.sp-section.sticky {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
 }
 
-.sparko-section.sparko-faq-section {
+.sp-section.sparko-faq-section {
   background-color: #fff;
   padding-top: 90px;
   padding-bottom: 60px;
   position: relative;
+}
+
+.sp-section.sp-download-section {
+  background-image: url('../images/Download-Background.png');
+  background-position: 0 0;
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .styleguide-block {
@@ -1703,7 +1712,7 @@ figcaption {
 
 .sp-nav-link:hover {
   color: #fff;
-  border-bottom: 1px solid #fff;
+  border-bottom: 2px solid #fff;
 }
 
 .sp-nav-link:focus-visible {
@@ -1847,7 +1856,7 @@ figcaption {
 }
 
 .sparko-mobile-mockup {
-  max-height: 90vh;
+  max-height: 80vh;
   text-align: right;
 }
 
@@ -1859,9 +1868,11 @@ figcaption {
   top: 0;
 }
 
-.sp-container.h100 {
+.sp-container.sp-main-banner-container {
   height: 100vh;
+  min-height: 500px;
   align-items: center;
+  padding-top: 60px;
   display: flex;
 }
 
@@ -1915,16 +1926,13 @@ figcaption {
 }
 
 .sp-welcome-kit {
-  height: 150vh;
   background-color: #fff;
-  border-bottom: 1px solid #e4ebf3;
   align-items: flex-start;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
   display: flex;
-  position: -webkit-sticky;
-  position: sticky;
+  position: relative;
   top: 0;
   overflow: hidden;
 }
@@ -1960,20 +1968,20 @@ figcaption {
 }
 
 .sp-hero-wrapper {
+  width: 100%;
   height: 100%;
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
   grid-auto-columns: 1fr;
   justify-content: space-between;
   align-items: center;
   padding-top: 65px;
-  display: grid;
+  display: flex;
   position: static;
 }
 
 .sparko-hero-content {
+  width: 50%;
   grid-row-gap: 10px;
   color: #fff;
   flex-direction: column;
@@ -2028,13 +2036,6 @@ figcaption {
 
 .sparko-download-banner {
   color: #fff;
-  background-image: url('../images/Download-Background.png');
-  background-position: 0%;
-  background-size: cover;
-  background-attachment: fixed;
-  border-bottom: 1px solid #e4ebf3;
-  padding-top: 100px;
-  padding-bottom: 100px;
   position: relative;
 }
 
@@ -2354,13 +2355,21 @@ figcaption {
 
 .sp-h1 {
   font-size: 3.61vw;
-  line-height: 65px;
+  line-height: 4.51vw;
 }
 
 .sp-h1.white {
   color: #fff;
   font-family: Plus Jakarta Sans, sans-serif;
   font-weight: 400;
+}
+
+.sp-h1.white.separated-lines {
+  display: block;
+}
+
+.sp-h1.white.single-line {
+  display: none;
 }
 
 .sp-h1.accent {
@@ -2422,7 +2431,6 @@ figcaption {
   z-index: 0;
   width: 100%;
   height: 234px;
-  cursor: none;
   background-image: linear-gradient(rgba(0, 0, 0, 0), #000);
   position: absolute;
   top: auto;
@@ -2432,16 +2440,17 @@ figcaption {
 }
 
 .sparko-intro-image {
-  width: 41.66%;
+  max-width: 41.66%;
   text-align: right;
   align-self: flex-end;
-  margin-left: 8.33%;
+  margin-bottom: 1px;
+  margin-left: auto;
   position: relative;
 }
 
 .sparko-features-section {
   height: 600vh;
-  background-image: linear-gradient(#020105, #170747 5%, #f69 28%, #fff 40%, #fff 60%, #cb5187 80%, #170747 100%, #170147);
+  background-image: linear-gradient(#170747, #170747 3%, #f69 25%, #fff 40%, #fff 60%, #cb5187 80%, #170747 100%, #170147);
   position: relative;
 }
 
@@ -2481,12 +2490,14 @@ figcaption {
 }
 
 .sparko-hero-image {
-  height: 100%;
+  width: auto;
   color: #fff;
   flex-direction: column;
   justify-content: flex-start;
+  align-self: flex-end;
   align-items: flex-start;
-  margin-bottom: -65px;
+  margin-bottom: 0;
+  margin-left: 8.33%;
   display: flex;
   position: relative;
 }
@@ -2540,6 +2551,8 @@ figcaption {
 
 .app-store-link.with-border {
   border: 1px solid #a2a2a1;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .sparko-header-section-scrollable {
@@ -2649,6 +2662,13 @@ figcaption {
   line-height: 28px;
 }
 
+.sp-accordion-with-image-para.sparko-paragraph-bigger a {
+  color: #f69;
+  margin-left: 3px;
+  margin-right: 3px;
+  display: inline-block;
+}
+
 .image-absoluted {
   width: 100%;
   height: 100%;
@@ -2660,7 +2680,7 @@ figcaption {
   right: auto;
 }
 
-.sp-accordion-with-image {
+.sp-accordion {
   border-bottom: 1px solid #000;
 }
 
@@ -2682,7 +2702,7 @@ figcaption {
 .sparko-features-layer-3-gradient {
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(#020105 1%, rgba(143, 143, 145, .01) 12%, rgba(255, 255, 255, 0) 50%, rgba(136, 128, 161, 0) 70%, #170747 80%);
+  background-image: linear-gradient(#020105, rgba(143, 143, 145, .01) 5%, rgba(255, 255, 255, 0) 50%, rgba(136, 128, 161, 0) 70%, #170747 85%);
   display: none;
   position: absolute;
   top: 0%;
@@ -2793,7 +2813,7 @@ figcaption {
 }
 
 .sp-hand-mockup {
-  width: 100%;
+  width: 62vh;
   height: auto;
 }
 
@@ -2845,6 +2865,7 @@ figcaption {
 }
 
 .sp-logo-header {
+  height: 30px;
   margin-top: 4px;
 }
 
@@ -2884,7 +2905,7 @@ figcaption {
   padding: 10px 15px 10px 24px;
   display: flex;
   position: absolute;
-  top: 150px;
+  top: 10.4vw;
   bottom: auto;
   left: 0%;
   right: auto;
@@ -2892,10 +2913,11 @@ figcaption {
 
 .html-embed {
   height: 3.33vw;
-  line-height: 1px;
+  max-height: 50px;
 }
 
 .sp-faq-load-text {
+  color: #f69;
   font-size: 20px;
   text-decoration: underline;
 }
@@ -3023,6 +3045,16 @@ figcaption {
   height: 50px;
 }
 
+.html-embed-2 {
+  width: 24px;
+  height: 24px;
+  color: #f69;
+}
+
+.sp-accordion-chevron {
+  height: 12px;
+}
+
 @media screen and (min-width: 1280px) {
   .container {
     font-family: Plus Jakarta Sans, sans-serif;
@@ -3108,6 +3140,21 @@ figcaption {
   .kbf-container {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .app-store-image {
+    min-height: 80px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .sp-section.sp-download-section {
+    padding-top: 140px;
+    padding-bottom: 140px;
+  }
+
+  .app-store-image {
+    min-height: 85px;
   }
 }
 
@@ -3232,12 +3279,16 @@ figcaption {
 }
 
 @media screen and (max-width: 991px) {
-  .sparko-section.cc-cta {
+  .sp-section.cc-cta {
     padding-left: 0;
     padding-right: 0;
   }
 
-  .sparko-section.sparko-faq-section {
+  .sp-section.sparko-banner-section {
+    background-position: 50% 0;
+  }
+
+  .sp-section.sparko-faq-section {
     padding-top: 50px;
   }
 
@@ -3480,6 +3531,10 @@ figcaption {
     line-height: 20px;
   }
 
+  .sp-button-primary.sp-digital-brochure-button {
+    margin-bottom: 20px;
+  }
+
   .footer-wrapper-three {
     flex-direction: column;
     justify-content: flex-start;
@@ -3580,12 +3635,7 @@ figcaption {
     max-width: 728px;
   }
 
-  .sp-hero-wrapper {
-    flex-direction: column;
-  }
-
   .sparko-hero-content {
-    max-width: 100%;
     margin-bottom: 40px;
   }
 
@@ -3601,6 +3651,10 @@ figcaption {
     line-height: 40px;
   }
 
+  .sp-h1.white.single-line {
+    display: none;
+  }
+
   .sp-h2 {
     font-size: 32px;
     line-height: 40px;
@@ -3614,11 +3668,20 @@ figcaption {
     display: flex;
   }
 
+  .sparko-banner-bottom-gradient {
+    height: 180px;
+  }
+
   .sparko-intro-image {
     margin-left: 0%;
   }
 
-  .sparko-hero-image, .sparko-hero-ctas {
+  .sparko-hero-image {
+    max-width: 41.66%;
+    justify-content: flex-end;
+  }
+
+  .sparko-hero-ctas {
     max-width: 100%;
   }
 
@@ -3657,6 +3720,10 @@ figcaption {
     line-height: 22px;
   }
 
+  .sp-hand-mockup {
+    width: 100%;
+  }
+
   .sp-banner-gradient {
     display: none;
   }
@@ -3690,38 +3757,43 @@ figcaption {
 }
 
 @media screen and (max-width: 767px) {
-  .sparko-section.cc-cta {
+  .sp-section.cc-cta {
     padding: 15px;
   }
 
-  .sparko-section.cc-home-wrap, .sparko-section.cc-store-home-wrap {
+  .sp-section.cc-home-wrap, .sp-section.cc-store-home-wrap {
     margin-left: 15px;
     margin-right: 15px;
   }
 
-  .sparko-section.sparko-banner-section {
+  .sp-section.sparko-banner-section {
     width: 100%;
     height: auto;
     min-height: 200px;
     background-image: url('../images/Mob-BG.png');
     background-position: 50% 65px;
     background-size: cover;
-    padding-top: 90px;
     position: relative;
   }
 
-  .sparko-section.full-vh-min {
+  .sp-section.full-vh-min {
     height: auto;
     min-height: 100vh;
   }
 
-  .sparko-section.full-vh-min.sticky {
+  .sp-section.full-vh-min.sticky {
     position: relative;
   }
 
-  .sparko-section.sparko-faq-section {
+  .sp-section.sparko-faq-section {
     z-index: 1;
     padding-bottom: 50px;
+  }
+
+  .sp-section.sp-download-section {
+    min-height: 60vh;
+    align-items: center;
+    display: flex;
   }
 
   .container {
@@ -3786,10 +3858,10 @@ figcaption {
     width: 100%;
     grid-row-gap: 10px;
     text-align: center;
-    flex: 1;
+    flex: 0 auto;
     align-items: center;
     margin-bottom: 0;
-    padding-top: 23.36%;
+    padding-top: 100px;
   }
 
   .our-services-grid {
@@ -3888,9 +3960,10 @@ figcaption {
   }
 
   .feature-grid {
+    height: 100%;
     grid-row-gap: 10px;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
   }
 
@@ -3952,6 +4025,10 @@ figcaption {
   .sp-button-primary.with-input-big {
     font-size: 16px;
     line-height: 20px;
+  }
+
+  .sp-button-primary.sp-digital-brochure-button {
+    margin-bottom: 0;
   }
 
   .footer-block-three {
@@ -4096,7 +4173,7 @@ figcaption {
   }
 
   .sparko-mobile-mockup {
-    height: 100%;
+    width: 100%;
     max-height: 100%;
   }
 
@@ -4110,6 +4187,10 @@ figcaption {
     padding-right: 0;
   }
 
+  .sp-container.feature-container {
+    height: 100%;
+  }
+
   .sparko-gradient-section {
     padding-top: 89px;
   }
@@ -4121,6 +4202,7 @@ figcaption {
   }
 
   .sp-hero-wrapper {
+    flex-direction: column;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: space-between;
     align-items: flex-start;
@@ -4128,16 +4210,12 @@ figcaption {
   }
 
   .sparko-hero-content {
+    width: 100%;
     margin-bottom: 0;
   }
 
   .shadow-two {
     width: 100%;
-  }
-
-  .sparko-download-banner {
-    padding-top: 60px;
-    padding-bottom: 60px;
   }
 
   .hero-form {
@@ -4175,7 +4253,20 @@ figcaption {
     padding-bottom: 88px;
   }
 
-  .sp-h1, .sp-h2 {
+  .sp-h1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .sp-h1.white.separated-lines {
+    display: none;
+  }
+
+  .sp-h1.white.single-line {
+    display: block;
+  }
+
+  .sp-h2 {
     font-size: 32px;
     line-height: 40px;
   }
@@ -4192,11 +4283,13 @@ figcaption {
 
   .sparko-banner-bottom-gradient {
     z-index: 2;
+    height: 180px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), #000);
   }
 
   .sparko-intro-image {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 60%;
     max-width: 400px;
     flex: 0 auto;
     margin-left: auto;
@@ -4205,12 +4298,14 @@ figcaption {
 
   .sparko-features-section {
     z-index: 0;
-    background-image: linear-gradient(#170747, #170747 0%, #f69 15%, #fff 40%, #fff 60%, #cb5187 80%, #170747 100%, #170147);
+    background-image: linear-gradient(#170747, #170747 0%, #f69 9%, #fff 40%, #fff 60%, #cb5187 80%, #170747 100%, #170147);
   }
 
   .sparko-features-section-image {
     width: 100%;
+    height: auto;
     max-width: 360px;
+    margin-bottom: 60px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -4228,7 +4323,9 @@ figcaption {
   }
 
   .sparko-hero-image {
+    width: 100%;
     height: auto;
+    max-width: 100%;
     align-self: center;
     align-items: center;
     margin-bottom: 0;
@@ -4308,7 +4405,7 @@ figcaption {
     padding-right: 0;
   }
 
-  .sp-accordion-with-image {
+  .sp-accordion {
     padding-top: 16px;
     padding-bottom: 16px;
   }
@@ -4320,7 +4417,7 @@ figcaption {
 
   .sparko-features-layer-3-gradient {
     z-index: 1;
-    background-image: linear-gradient(#020105, rgba(143, 143, 145, .01) 10%, rgba(255, 255, 255, 0) 50%, rgba(136, 128, 161, 0) 70%, #170747 82%);
+    background-image: linear-gradient(#020105, rgba(143, 143, 145, .01) 4%, rgba(255, 255, 255, 0) 50%, rgba(136, 128, 161, 0) 70%, #170747 82%);
     display: block;
   }
 
@@ -4347,8 +4444,17 @@ figcaption {
     margin-top: 30px;
   }
 
+  .sp-footer-contact-text {
+    width: 100%;
+  }
+
+  .sp-footer-contact {
+    flex-wrap: wrap;
+    margin-bottom: 1px;
+  }
+
   .sp-hand-mockup {
-    width: 70%;
+    width: 80%;
     margin-top: 40px;
     margin-right: -15%;
     position: relative;
@@ -4435,6 +4541,11 @@ figcaption {
   .sp-footer-logo-sbi {
     height: 27px;
   }
+
+  .sp-accordion-chevron {
+    height: 10px;
+    transform: rotate(0);
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -4443,7 +4554,8 @@ figcaption {
     line-height: 52px;
   }
 
-  .sparko-section.sparko-banner-section {
+  .sp-section.sparko-banner-section {
+    height: 100vh;
     align-items: flex-start;
   }
 
@@ -4535,6 +4647,10 @@ figcaption {
     right: 0;
   }
 
+  .sp-button-primary.hero-apply-now {
+    width: 100%;
+  }
+
   .footer-bottom {
     flex-direction: column;
     justify-content: flex-start;
@@ -4573,14 +4689,15 @@ figcaption {
 
   .sparko-mobile-mockup {
     width: auto;
-    height: 100%;
+    height: auto;
+    max-width: 100%;
   }
 
   .sp-container {
     align-self: flex-start;
   }
 
-  .sp-container.h100 {
+  .sp-container.sp-main-banner-container {
     height: 100%;
   }
 
@@ -4633,6 +4750,14 @@ figcaption {
     font-size: 2.5rem;
   }
 
+  .sp-h1.white.separated-lines {
+    display: block;
+  }
+
+  .sp-h1.white.single-line {
+    display: none;
+  }
+
   .sp-h2.white {
     align-self: auto;
   }
@@ -4641,9 +4766,14 @@ figcaption {
     background-color: rgba(0, 0, 0, .9);
   }
 
+  .sparko-banner-bottom-gradient {
+    height: 180px;
+    margin-bottom: -1px;
+  }
+
   .sparko-intro-image {
-    width: 100%;
-    flex: 1;
+    width: auto;
+    flex: none;
   }
 
   .sparko-footer-bottom {
@@ -4686,7 +4816,7 @@ figcaption {
     padding-right: 18px;
   }
 
-  .sp-accordion-with-image {
+  .sp-accordion {
     padding-top: 10px;
     padding-bottom: 10px;
   }
