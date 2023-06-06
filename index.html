@@ -1,5 +1,5 @@
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
-<!--  Last Published: Mon Jun 05 2023 23:25:20 GMT+0000 (Coordinated Universal Time)  -->
+<!--  Last Published: Tue Jun 06 2023 17:17:10 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="645e2938c3daa18922e53b6d" data-wf-site="645e2938c3daa18922e53aca">
 <head>
   <meta charset="utf-8">
@@ -95,24 +95,32 @@
   }
   .sp-flip-card.shown{
     opacity:1;
-    transition-delay:1s;
+    transition-delay:.5s;
     transform: translateY(0%);
   }
   .sp-flip-card .sp-flip-card-back{
     transform:rotateY(180deg);
-    transition:1s;
+    transition:.8s;
   }
   .sp-flip-card .sp-flip-card-front{
     transform:rotateY(0deg);
-    transition:1s;
+    transition:.8s;
   }
   .sp-flip-card.flipped .sp-flip-card-back{
     transform:rotateY(0deg);
-    transition-delay: 2s;
+    transition-delay: 1.6s;
   }
   .sp-flip-card.flipped .sp-flip-card-front{
     transform:rotateY(180deg);
-      transition-delay: 2s;
+      transition-delay: 1.6s;
+  }
+  .sp-flip-card.flipped-fast .sp-flip-card-back{
+    transform:rotateY(0deg);
+    transition-delay: 0s;
+  }
+  .sp-flip-card.flipped-fast .sp-flip-card-front{
+    transform:rotateY(180deg);
+      transition-delay: 0s;
   }
   @media only screen and (max-width:767px){
     .sp-accordion-title-wrapper.active .sp-accordion-title{
@@ -247,7 +255,7 @@
             </ul>
             <div class="header-app-store-block">
               <a href="#" class="sp-google-play-link w-inline-block">
-                <div class="sp-google-play-svg w-embed"><svg width="auto" height="100%" viewbox="0 0 290 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div class="sp-google-play-svg w-embed"><svg height="100%" viewbox="0 0 290 86" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M229.493 64.5222H233.48V37.8088H229.493V64.5222ZM265.405 47.4323L260.835 59.0131H260.698L255.955 47.4323H251.66L258.775 63.6183L254.718 72.6224H258.876L269.839 47.4331L265.405 47.4323ZM242.793 61.4878C241.49 61.4878 239.667 60.8342 239.667 59.2192C239.667 57.1575 241.936 56.3671 243.894 56.3671C245.646 56.3671 246.473 56.7445 247.537 57.2603C247.227 59.735 245.097 61.4878 242.793 61.4878ZM243.276 46.848C240.389 46.848 237.4 48.12 236.163 50.9379L239.701 52.4152C240.458 50.9379 241.866 50.4572 243.344 50.4572C245.406 50.4572 247.503 51.6933 247.537 53.8935V54.168C246.814 53.7556 245.267 53.1373 243.379 53.1373C239.562 53.1373 235.68 55.233 235.68 59.1508C235.68 62.7248 238.808 65.0276 242.312 65.0276C244.992 65.0276 246.473 63.8248 247.398 62.4152H247.537V64.4784H251.387V54.2363C251.387 49.4938 247.844 46.848 243.276 46.848ZM218.635 50.6841H212.964V41.5281H218.635C221.616 41.5281 223.308 43.9954 223.308 46.106C223.308 48.1761 221.616 50.6841 218.635 50.6841ZM218.532 37.8095H208.979V64.5228H212.964V54.4027H218.533C222.951 54.4027 227.295 51.2043 227.295 46.107C227.295 41.0106 222.951 37.8095 218.532 37.8095ZM166.437 61.4923C163.683 61.4923 161.378 59.1853 161.378 56.0195C161.378 52.817 163.683 50.4774 166.437 50.4774C169.157 50.4774 171.291 52.8171 171.291 56.0195C171.291 59.1853 169.157 61.4923 166.437 61.4923ZM171.016 48.9277H170.878C169.983 47.8608 168.261 46.8969 166.094 46.8969C161.549 46.8969 157.384 50.8907 157.384 56.0195C157.384 61.1135 161.549 65.0722 166.094 65.0722C168.261 65.0722 169.983 64.108 170.878 63.0072H171.016V64.3143C171.016 67.7923 169.157 69.6502 166.162 69.6502C163.719 69.6502 162.204 67.8949 161.584 66.4149L158.108 67.8605C159.105 70.2692 161.755 73.2308 166.162 73.2308C170.845 73.2308 174.803 70.4763 174.803 63.7632V47.4474H171.016L171.016 48.9277ZM177.558 64.5214H181.549V37.808H177.558V64.5214ZM187.436 55.7091C187.333 52.1977 190.157 50.4081 192.187 50.4081C193.771 50.4081 195.112 51.2002 195.561 52.3354L187.436 55.7091ZM199.828 52.6793C199.071 50.6495 196.765 46.8969 192.049 46.8969C187.366 46.8969 183.477 50.5801 183.477 55.9846C183.477 61.0793 187.333 65.0723 192.495 65.0723C196.66 65.0723 199.071 62.5258 200.07 61.045L196.972 58.9793C195.939 60.4943 194.528 61.4925 192.495 61.4925C190.466 61.4925 189.019 60.5628 188.091 58.7383L200.241 53.7128L199.828 52.6793ZM103.018 49.6854V53.5407H112.243C111.968 55.7093 111.245 57.2925 110.143 58.3942C108.8 59.7363 106.7 61.217 103.018 61.217C97.3379 61.217 92.8976 56.6389 92.8976 50.9591C92.8976 45.2792 97.3379 40.7005 103.018 40.7005C106.082 40.7005 108.319 41.9056 109.971 43.4547L112.691 40.7347C110.384 38.5319 107.321 36.8452 103.018 36.8452C95.237 36.8452 88.6968 43.1792 88.6968 50.9591C88.6968 58.7381 95.237 65.0723 103.018 65.0723C107.217 65.0723 110.384 63.6952 112.862 61.1136C115.41 58.5662 116.202 54.9864 116.202 52.0943C116.202 51.2004 116.132 50.3741 115.995 49.6854H103.018ZM126.691 61.4923C123.937 61.4923 121.561 59.2204 121.561 55.9846C121.561 52.7144 123.937 50.4775 126.691 50.4775C129.445 50.4775 131.82 52.7144 131.82 55.9846C131.82 59.2204 129.445 61.4923 126.691 61.4923ZM126.691 46.8969C121.664 46.8969 117.568 50.7177 117.568 55.9846C117.568 61.217 121.664 65.0723 126.691 65.0723C131.717 65.0723 135.813 61.217 135.813 55.9846C135.813 50.7177 131.717 46.8969 126.691 46.8969ZM146.59 61.4923C143.838 61.4923 141.462 59.2204 141.462 55.9846C141.462 52.7144 143.838 50.4775 146.59 50.4775C149.345 50.4775 151.719 52.7144 151.719 55.9846C151.719 59.2204 149.345 61.4923 146.59 61.4923ZM146.59 46.8969C141.565 46.8969 137.469 50.7177 137.469 55.9846C137.469 61.217 141.565 65.0723 146.59 65.0723C151.618 65.0723 155.713 61.217 155.713 55.9846C155.713 50.7177 151.618 46.8969 146.59 46.8969Z" fill="white"></path>
                     <path d="M45.2648 41.9241L22.5178 66.0685C22.5187 66.0735 22.5204 66.0776 22.5212 66.0828C23.2188 68.7046 25.6135 70.635 28.4555 70.635C29.5916 70.635 30.6583 70.3279 31.573 69.7887L31.6457 69.7461L57.2516 54.9704L45.2648 41.9241Z" fill="#EB3131"></path>
                     <path d="M68.2794 37.8132L68.2576 37.7983L57.2028 31.3896L44.748 42.4724L57.246 54.9688L68.2426 48.6239C70.1705 47.5831 71.4793 45.5506 71.4793 43.2069C71.4793 40.8799 70.1883 38.8575 68.2794 37.8132Z" fill="#F6B60B"></path>
@@ -277,9 +285,9 @@
     <div class="sp-container sp-main-banner-container">
       <div class="sparko-banner-content-wrapper h100">
         <div data-w-id="86e64837-0616-515b-4568-76c147234d1f" style="opacity:0" class="sparko-intro-content">
-          <div class="sp-h1 white single-line">Introducing SPLITO by SBI Card</div>
-          <div class="sp-h1 white separated-lines">Introducing SPLITO<br>by SBI Card</div>
-          <div class="sparko-paragraph-bigger white">Live now Pay Later.<br></div>
+          <h1 class="sp-h1 white separated-lines">Introducing SPLITO<br>by SBI Card</h1>
+          <h1 class="sp-h1 white single-line">Introducing SPLITO<br>by SBI Card</h1>
+          <p class="sparko-paragraph-bigger white">Live now Pay Later.</p>
         </div>
         <div data-w-id="b2f01bf2-a3cf-a787-3e87-3c3081c03bac" style="-webkit-transform:translate3d(0, 80px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 80px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 80px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 80px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="sparko-intro-image"><img src="images/Hero_Mobile_Mockup.png" loading="eager" srcset="images/Hero_Mobile_Mockup-p-500.png 500w, images/Hero_Mobile_Mockup-p-800.png 800w, images/Hero_Mobile_Mockup-p-1080.png 1080w, images/Hero_Mobile_Mockup-p-1600.png 1600w, images/Hero_Mobile_Mockup.png 1607w" sizes="(max-width: 479px) 88vw, (max-width: 767px) 400px, (max-width: 991px) 40vw, (max-width: 1279px) 37vw, (max-width: 1439px) 38vw, 39vw" alt="App Mockup in iphone" class="sparko-mobile-mockup">
           <div class="sp-flip-card"><img src="images/Hero_Card_back.png" loading="eager" sizes="(max-width: 479px) 74vw, (max-width: 767px) 336px, (max-width: 991px) 33vw, (max-width: 1279px) 31vw, (max-width: 1919px) 32vw, 33vw" srcset="images/Hero_Card_back-p-500.png 500w, images/Hero_Card_back-p-800.png 800w, images/Hero_Card_back-p-1080.png 1080w, images/Hero_Card_back.png 1340w" alt="Card mockup back" class="sp-flip-card-back"><img src="images/Hero_card_front.png" loading="eager" alt="Card mockup front" class="sp-flip-card-front"></div>
@@ -289,7 +297,7 @@
     <div class="sparko-banner-bottom-gradient"></div>
     <div class="sp-banner-gradient"></div>
     <div class="sp-logo-badge">
-      <div class="html-embed w-embed"><svg width="auto" height="100%" viewbox="0 0 90 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div class="html-embed w-embed"><svg height="100%" viewbox="0 0 90 17" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M4.47675 2.26652C3.82257 2.26652 3.2578 2.50202 2.78461 2.97521C2.31142 3.4484 2.07592 4.01753 2.07592 4.68043C2.07592 5.34333 2.31142 5.91901 2.78461 6.40092C3.2578 6.88283 3.82257 7.12487 4.47675 7.12487H11.4088C12.6452 7.12487 13.705 7.56099 14.5881 8.43541C15.4713 9.30982 15.9118 10.3696 15.9118 11.6147C15.9118 12.8598 15.4713 13.9218 14.5881 14.794C13.705 15.6662 12.6452 16.1045 11.4088 16.1045H1.03796C0.837346 16.1045 0.660719 16.0587 0.505897 15.9672C0.351075 15.8756 0.228962 15.7535 0.137377 15.5986C0.0457924 15.4438 0 15.2672 0 15.0666C0 14.7766 0.100307 14.5302 0.300921 14.3295C0.501536 14.1289 0.745762 14.0286 1.03796 14.0286H11.4088C12.0826 14.0286 12.654 13.7931 13.1293 13.3199C13.6047 12.8467 13.838 12.2776 13.838 11.6147C13.838 10.9518 13.6003 10.3827 13.1293 9.90949C12.6561 9.4363 12.0826 9.20079 11.4088 9.20079H4.47675C3.23818 9.20079 2.18495 8.76032 1.31053 7.87718C0.436118 6.99186 0 5.93209 0 4.6957C0 3.4593 0.436118 2.39736 1.31053 1.5164C2.18277 0.633258 3.23818 0.19278 4.47675 0.19278H5.22687C5.37297 0.19278 5.50817 0.221127 5.63682 0.273461C5.7633 0.327976 5.87233 0.402116 5.96391 0.49152C6.0555 0.583105 6.12746 0.692135 6.18197 0.818609C6.23649 0.947263 6.26483 1.08246 6.26483 1.22856C6.26483 1.52076 6.16453 1.76498 5.96391 1.9656C5.7633 2.16621 5.51689 2.26652 5.22687 2.26652H4.47675Z" fill="#9F73FD"></path>
           <path d="M29.7782 0.21875C31.0146 0.21875 32.0744 0.659229 32.9575 1.54237C33.8406 2.42551 34.2811 3.48963 34.2811 4.73475C34.2811 5.97987 33.8406 7.04181 32.9575 7.91405C32.0744 8.78629 31.0146 9.22458 29.7782 9.22458H20.4431C20.4431 9.51678 20.3384 9.76319 20.1291 9.9638C19.9198 10.1644 19.6734 10.2647 19.3921 10.2647C19.1108 10.2647 18.8687 10.1644 18.6681 9.9638C18.4675 9.76319 18.3672 9.51896 18.3672 9.22677V8.1888C18.3672 7.89879 18.4675 7.65238 18.6681 7.45176C18.8687 7.25115 19.1129 7.15084 19.4051 7.15084H29.776C30.4498 7.15084 31.0233 6.91534 31.4965 6.44215C31.9697 5.96896 32.2052 5.40201 32.2052 4.73693C32.2052 4.07185 31.9697 3.5049 31.4965 3.03171C31.0233 2.55852 30.4498 2.32302 29.776 2.32302H19.4051C19.1129 2.32302 18.8687 2.21835 18.6681 2.00901C18.4675 1.79968 18.3672 1.55981 18.3672 1.28506C18.3672 1.08444 18.413 0.907816 18.5046 0.752994C18.5961 0.598173 18.7183 0.471698 18.8731 0.371391C19.0279 0.271084 19.2045 0.220931 19.4051 0.220931H29.776L29.7782 0.21875Z" fill="#9F73FD"></path>
           <path d="M49.5389 13.9478C49.8115 13.9478 50.0535 14.0481 50.2629 14.2487C50.4722 14.4494 50.5769 14.6958 50.5769 14.9858C50.5769 15.2758 50.4722 15.5222 50.2629 15.7228C50.0535 15.9234 49.8137 16.0237 49.5389 16.0237H40.5309C39.3839 16.0237 38.407 15.6138 37.598 14.7961C36.789 13.9762 36.3834 12.9949 36.3834 11.8479V11.6298C36.3834 11.3398 36.4837 11.0934 36.6843 10.8928C36.885 10.6922 37.1248 10.5919 37.4083 10.5919C37.6918 10.5919 37.936 10.6922 38.1453 10.8928C38.3547 11.0934 38.4593 11.3398 38.4593 11.6298V11.8479C38.4593 12.4301 38.6643 12.9251 39.0743 13.3351C39.4842 13.745 39.9705 13.95 40.5353 13.95H49.5433L49.5389 13.9478Z" fill="#9F73FD"></path>
@@ -367,7 +375,7 @@
       <div class="sp-container">
         <div class="w-layout-grid feature-grid about-4">
           <div class="features-section-content how-to-apply">
-            <h2 class="sp-h2 pink mb0">How to apply</h2>
+            <h2 class="sp-h2 pink mb0">How to Apply</h2>
             <h2 class="sp-h2 white">Quick and Easy</h2>
             <p class="sparko-paragraph-bigger white">Download our SPLITO app to apply for your card instantly through end-to-end digital onboarding journey. It’s a fast &amp; paperless process.</p>
             <a href="#" class="sp-button-primary hero-apply-now w-button">Apply now</a>
@@ -392,7 +400,7 @@
     <div class="sp-container welcome-kit-container">
       <div class="sp-hero-wrapper">
         <div id="w-node-_6896ce2a-87fa-b704-1890-f2fdc29f14d3-22e53b6d" class="sparko-hero-content">
-          <h1 class="sp-h2 pink mb0">SPLITO Membership e-Kit</h1>
+          <h2 class="sp-h2 pink mb0">SPLITO Membership e-Kit</h2>
           <p class="sparko-paragraph-bigger">The digitized membership e-kit contains the e-Brochure, the Terms &amp; Conditions and Most Important Terms &amp; Conditions (MITC) e-Booklet that you can view and /or download at your convenience anytime, anywhere.</p>
           <div class="sp-button-group membership">
             <a href="#" class="sp-button-primary sp-digital-brochure-button w-button">Digital Brochure</a>
@@ -410,7 +418,7 @@
       <div class="sp-container">
         <div class="sp-download-wrapper">
           <div id="w-node-b5189049-d6a0-1863-45be-7ed4c7192a48-22e53b6d" class="sparko-download-content">
-            <h1 class="sp-h2 white mb0">Download SPLITO App to get started</h1>
+            <h2 class="sp-h2 white mb0">Download SPLITO App to get started</h2>
           </div>
           <div id="w-node-b5189049-d6a0-1863-45be-7ed4c7192a46-22e53b6d" class="sparko-hero-ctas">
             <a href="#" class="app-store-link with-border w-inline-block"><img src="images/GPlay.svg" loading="lazy" alt="" class="app-store-image"></a>
@@ -431,10 +439,10 @@
   </div>
   <section id="faq-support" class="sp-section sparko-faq-section">
     <div class="sp-container">
-      <h1 class="sp-h2">FAQs &amp; Support</h1>
+      <h2 class="sp-h2">FAQs &amp; Support</h2>
       <div class="sp-accordion loaded">
         <div class="sp-accordion-title-wrapper">
-          <h4 class="sp-accordion-title">What is SPLITO?</h4><img src="images/chevron.svg" loading="lazy" alt="" class="sp-accordion-chevron">
+          <h3 class="sp-accordion-title">What is SPLITO?</h3><img src="images/chevron.svg" loading="lazy" alt="" class="sp-accordion-chevron">
         </div>
         <div class="sp-accordion-content-wrapper">
           <div class="sp-accordion-content overflows">
@@ -514,7 +522,7 @@
           </div>
         </div>
       </div>
-      <a href="#" class="sp-faq-load-more w-inline-block">
+      <a href="faqs.html" class="sp-faq-load-more w-inline-block">
         <div class="sp-faq-load-text">See More</div>
         <div class="html-embed-2 w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none">
             <mask id="mask0_850_2572" style="mask-type:alpha" maskunits="userSpaceOnUse" x="0" y="0" width="24" height="24">
@@ -531,11 +539,11 @@
     <div class="sp-container">
       <div class="footer-wrapper">
         <div class="sp-footer-logo-row">
-          <a id="w-node-_68393ca4-9079-bae4-d4d0-f96cb6fa8fd3-22e53b6d" href="#" class="footer-brand w-inline-block"><img src="images/Splito-White-Logo.svg" loading="lazy" alt="" class="sp-footer-logo"></a>
-          <a id="w-node-a02acbdf-6bdb-1f01-b885-05d7c4318810-22e53b6d" href="#" class="footer-brand w-inline-block"><img src="images/poweredbysbi.svg" loading="lazy" alt="" class="sp-footer-logo-sbi"></a>
+          <a id="w-node-f7b1b691-c6f3-0768-e7f8-ead1ddd54b78-ddd54b74" href="#" class="footer-brand w-inline-block"><img src="images/Splito-White-Logo.svg" loading="lazy" alt="" class="sp-footer-logo"></a>
+          <a id="w-node-f7b1b691-c6f3-0768-e7f8-ead1ddd54b7a-ddd54b74" href="#" class="footer-brand w-inline-block"><img src="images/poweredbysbi.svg" loading="lazy" alt="" class="sp-footer-logo-sbi"></a>
         </div>
         <div class="footer-content">
-          <div id="w-node-_6e476891-ef97-1d87-b960-280d8a495f47-22e53b6d" class="sp-footer-company-info">
+          <div id="w-node-f7b1b691-c6f3-0768-e7f8-ead1ddd54b7d-ddd54b74" class="sp-footer-company-info">
             <div class="sp-footer-contact">
               <div class="sp-footer-contact-text">Contact Us:</div>
               <a href="tel:18601807777" class="sp-footer-contact-link">1860 180 7777</a>
@@ -545,19 +553,19 @@
               <a href="mailto:contactus@sbicard.com?subject=I%20want%20to%20enquire%20about%20Splito" class="sp-footer-contact-link">contactus@sbicard.com</a>
             </div>
           </div>
-          <div id="w-node-_68393ca4-9079-bae4-d4d0-f96cb6fa8fd6-22e53b6d" class="footer-block">
+          <div id="w-node-f7b1b691-c6f3-0768-e7f8-ead1ddd54b88-ddd54b74" class="footer-block">
             <a href="#" class="footer-link">Do Not Disturb</a>
             <a href="#" class="footer-link">Security</a>
             <a href="#" class="footer-link">Forms Central</a>
             <a href="#" class="footer-link">Disclaimer</a>
           </div>
-          <div id="w-node-_68393ca4-9079-bae4-d4d0-f96cb6fa8fdf-22e53b6d" class="footer-block">
+          <div id="w-node-f7b1b691-c6f3-0768-e7f8-ead1ddd54b91-ddd54b74" class="footer-block">
             <a href="#" class="footer-link">Fair Practice Code</a>
             <a href="#" class="footer-link">Credit Bureau FAQs</a>
             <a href="#" class="footer-link">Privacy Policy</a>
             <a href="#" class="footer-link">Order of Settlement </a>
           </div>
-          <div id="w-node-_68393ca4-9079-bae4-d4d0-f96cb6fa8fea-22e53b6d" class="footer-block sp-mobile-footer-grid">
+          <div id="w-node-f7b1b691-c6f3-0768-e7f8-ead1ddd54b9a-ddd54b74" class="footer-block sp-mobile-footer-grid">
             <a href="#" class="footer-link">Usage Agreement</a>
             <a href="#" class="footer-link">Customer Notices</a>
             <a href="#" class="footer-link">Most Important Document</a>
@@ -567,14 +575,14 @@
       </div>
       <div class="footer-divider"></div>
       <div class="sparko-footer-bottom">
-        <div id="w-node-cff0e427-015c-7b4f-ec26-ce8f3fd1021e-22e53b6d" class="sparko-footer-bottom-links">
+        <div id="w-node-f7b1b691-c6f3-0768-e7f8-ead1ddd54ba5-ddd54b74" class="sparko-footer-bottom-links">
           <a href="#" class="footer-link">MITC</a>
-          <a id="w-node-cff0e427-015c-7b4f-ec26-ce8f3fd1022f-22e53b6d" href="#" class="footer-link">Promotional Offer T&amp;C</a>
+          <a id="w-node-f7b1b691-c6f3-0768-e7f8-ead1ddd54ba8-ddd54b74" href="#" class="footer-link">Promotional Offer T&amp;C</a>
           <a href="#" class="footer-link">Cardholder Agreement</a>
           <a href="#" class="footer-link">Terms and Conditions</a>
           <a href="#" class="footer-link">Tokenization</a>
         </div>
-        <div id="w-node-a73bea3c-75c3-21f1-eac3-2dcb65bc72f3-22e53b6d" class="sparko-social-icons">
+        <div id="w-node-f7b1b691-c6f3-0768-e7f8-ead1ddd54bb0-ddd54b74" class="sparko-social-icons">
           <a href="#" class="sp-footer-social-link w-inline-block">
             <div class="w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="100%" viewbox="0 0 26 26" fill="none">
                 <rect width="26" height="26" rx="4" fill="currentColor"></rect>
@@ -608,22 +616,26 @@
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=645e2938c3daa18922e53aca" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
   <script>
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+}
 window.addEventListener('DOMContentLoaded', function () {
     // register accordion animation
     registerAccordion()
+    registerCardFaceClick();
+    if(document.querySelector('.sparko-mobile-mockup').parentElement.style.opacity == '1'){
+    	runCardFaceFlip();
+    }
             /*document.querySelector('.sp-apply-form-header-wrapper .sp-button-primary.overlay-type').addEventListener('click',function(){
                     document.querySelector('.sp-apply-form-header-wrapper .sp-button-primary.overlay-type').classList.add('hidden')
                         document.querySelector('.sp-apply-form-header-wrapper').classList.remove('input-hidden')
             })*/
 })
 window.addEventListener('load', function () {
-  document.querySelector('.sp-flip-card').classList.add('shown');
-  setTimeout(function(){
-    document.querySelector('.sp-flip-card').classList.add('flipped')
-  },200)
-  setTimeout(function(){
-    document.querySelector('.sp-flip-card').classList.remove('flipped')
-  },4000)
+  if(!document.querySelector('.sp-flip-card').classList.contains('shown')){
+  	runCardFaceFlip();
+  }
 })
 window.addEventListener('scroll', function () {
     // Handle Feature Section Scroll Animation
@@ -636,6 +648,23 @@ window.addEventListener('scroll', function () {
     // Handle header Active Link
     handleHeaderActiveLinks();
 })
+function runCardFaceFlip(){
+  document.querySelector('.sp-flip-card').classList.add('shown');
+  setTimeout(function(){
+    document.querySelector('.sp-flip-card').classList.add('flipped')
+  },200)
+  setTimeout(function(){
+    document.querySelector('.sp-flip-card').classList.remove('flipped')
+  },4000)
+}
+function registerCardFaceClick(){
+	document.querySelector('.sp-flip-card-front').addEventListener('click',function(){
+  		document.querySelector('.sp-flip-card').classList.add('flipped-fast')
+  })
+	document.querySelector('.sp-flip-card-back').addEventListener('click',function(){
+  		document.querySelector('.sp-flip-card').classList.remove('flipped-fast')
+  })
+}
 function registerAccordion() {
     let accHeading = null;
     let accPanel = null;
